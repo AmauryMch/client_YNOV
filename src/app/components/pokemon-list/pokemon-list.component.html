@@ -1,0 +1,19 @@
+<p>pokemon-list works!</p>
+
+
+<div>
+    <ul>
+        <li *ngFor="let px of pokemons" (click)="getNews(px.name)">{{px.name}} (type: {{px.type1}})</li>
+    </ul>
+
+    <div>{{news?.totalResults}} résultats</div>
+    <ul>
+        <li *ngFor="let art of news?.articles">
+            <h3>{{art.title}}</h3>
+            <img [src]="art.urlToImage" alt="" width="100" height="75">
+            <div>
+                <a [href]="art.url" target="_blank">{{art.url}}</a>
+            </div>
+        </li>
+    </ul>
+</div>
